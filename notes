@@ -44,3 +44,12 @@ gwmi | foreach {appelle la methode}
 
 [string](1..10)
 $ofs = ","
+
+
+# debug
+pas a pas:
+Step Over : ne rentre pas dans les fonctions
+step into  : rnetre dans les fonctions
+Step Out : sor d'une fonxtion
+
+En debug ISE a le contenu des variables (mouse over)

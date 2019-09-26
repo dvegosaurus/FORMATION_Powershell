@@ -12213,3 +12213,7 @@ AlreadyExistingUserSpecifiedPropertyNoExpand,Microsoft.PowerShell.Commands.Selec
 PS C:\Users\Administrator.ADATUM> get-aduser -Filter * -Properties * | select samaccountname | export-csv toto.csv
 PS C:\Users\Administrator.ADATUM> get-aduser -Filter * -Properties * | select samaccountname | export-csv toto.csv
 PS C:\Users\Administrator.ADATUM> .\toto.csv
+**********************
+Windows PowerShell transcript end
+End time: 20190926083557
+**********************

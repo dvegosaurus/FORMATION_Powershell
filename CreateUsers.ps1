@@ -1,21 +1,20 @@
 $users = import-csv "C:\Git\Democode\Mod08\Labfiles\users.csv"
-$ADpath = "OU=IT,DC=Adatum,DC=COM"
 
 foreach ($user in $users)
 {
-    $mail = "$(user.userID)@adatum.com"
+    $mail = "$($user.userID)@adatum.com"
     $username = "$($user.First) $($user.last)"
     Write-Progress -activity $username -status $mail
 
-    $splat = @{
-       GivenName         =  $user.First
+    $param = @{
+       GivenName         =  $user.first
        Surname           =  $user.Last    
-       DisplayName       = $username
-       SamAccountName    = $username
-       UserPrincipalName = $username
-       Name              = $username
-       Path              = $ADpath
-       Department        = $user.Department
+       DisplayName       =  $username
+       SamAccountName    =  $user.userID
+       UserPrincipalName =  $username
+       Name              =  $username
+       Path              =  "OU=$($user.Department),DC=Adatum,DC=COM"
+       Department        =  $user.Department
     }
-    new-aduser @splat
+    new-aduser @param
 }

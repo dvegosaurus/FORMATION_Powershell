@@ -1,0 +1,46 @@
+Syntax :
+ [] = facultatif
+ <> = Obligatoire
+
+Get-command :
+    liste aussi les éxécutable connu
+    get-command -CommandType Application
+
+test-connection -quiet >> retourne un booléen
+
+get-aduser >> données fournis en XML
+
+
+#  raccourcis
+ctrl + espace >> reactive tabulation
+
+# measure-object 
+y penser pour date et taille (max et min pour plus grand, plus ancien)
+
+# forcz un cmdlet a renvoyer quelque chose
+-passthru
+
+# Splatting : accectpe des noms court pour les paramètres
+WMI:
+* WS-Man WebSerser Management
+* WBEM : normalisation des accès a divers composant via CIM (Common Information Model)
+* WMI : Windows Management Instrumentation (winmgts.exe >> composant COM interrog" via RPC
+* MOF: Manage Object Format (dossiers WBEM dans %OSPath%\System ... avec liste des sources)
+* COM: Common Objet Model
+*Remote Procedure Call:
+get-wmi >> DCOM donc RPC
+get-cim >> WS-Man
+Exemple de souscription WMI:
+- Kill de process (jeux)
+- Reconfiguration auto d'Application
+- Gestion de la config des postes (i.e: Economie d'energie)
+note rgou: on pourrait aussi passer par un service powershell
+
+
+invoke WMI Method:
+
+gwmi | foreach {appelle la methode}
+
+
+[string](1..10)
+$ofs = ","

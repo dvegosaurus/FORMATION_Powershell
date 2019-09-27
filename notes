@@ -1,3 +1,5 @@
+https://chroche.blob.core.windows.net/documents/docps.zip
+
 Syntax :
  [] = facultatif
  <> = Obligatoire
@@ -50,6 +52,44 @@ $ofs = ","
 pas a pas:
 Step Over : ne rentre pas dans les fonctions
 step into  : rnetre dans les fonctions
-Step Out : sor d'une fonxtion
+Step Out : sort d'une fonction
 
 En debug ISE a le contenu des variables (mouse over)
+
+# try / Catch:
+utilise $_ pour l'erreur en cours
+du coup $error[0] == $_ 
+
+# PSDrive lecteur function
+Remove-item function:\Mafonction
+get-item function:\mafonction
+
+# scope : recherche par defaut dans les scope supérieur mais lecture only
+
+
+# Winrm >> execute dans wsmprovhost (poste distant)
+
+
+# invoke-command :
+$using: >> autorisé en invoke-command
+param() >> autorisé (stop faire du $totot = $args[0])
+
+#double-hop:
+configuration des CredSSP (poste client + serveur de rebond)
+ou set-ADComputer -identity -allow (ressource based )
+
+import-PSSession : la session est stocké en local dans AppData\temp
+
+$DC = New-PSSession LON-DC1
+
+get-module -ListAvailable -PSSession $DC
+Import-Module -PSSession $DC -name SmbShare -prefix xxx
+
+
+Get-xxxSmbshare | % {
+
+if (!(Test-Path $_.path)){New-Item $_.path -ItemType Directory -force}
+New-SmbShare -Path $_.path -Description "auto created" -name $_.name 
+
+}
+get-smbshare

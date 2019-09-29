@@ -93,3 +93,8 @@ New-SmbShare -Path $_.path -Description "auto created" -name $_.name
 
 }
 get-smbshare
+
+#about dotnet list:
+[System.Collections.Generic.List[system.object]
+System.collections.generic.list is a dotnet objet allowing for better list but you have to force the type (useful for datagridview 
+or when data needs to be removed from a list)
